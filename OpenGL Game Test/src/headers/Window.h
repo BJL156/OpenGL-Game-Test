@@ -3,7 +3,10 @@
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Renderer.h"
+
 #include <iostream>
+
 
 class Window
 {
@@ -12,6 +15,7 @@ private:
 	const char* m_Title;
 	GLFWwindow* m_Window;
 public:
+	Renderer renderer;
 	Window(int width, int height, const char* title) : m_Width(width), m_Height(height), m_Title(title)
 	{
 		glfwInit();
@@ -29,6 +33,8 @@ public:
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			std::cout << "GLAD FAILED TO INITIALIZE" << std::endl;
+
+		renderer.Init();
 	}
 
 	bool WindowShouldClose() { return glfwWindowShouldClose(m_Window); }
@@ -38,11 +44,12 @@ public:
 	int GetHeight() { return m_Height; }
 	GLFWwindow* GetWindow() { return m_Window; }
 
-	void Update(float r, float g, float b, float a)
+	void Update(float r, float g, float b, float a, Shader shader)
 	{
 		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
+		renderer.Draw(glm::vec4(255.0f, 0, 255.0f, 255.0f), m_Window, shader);
 
 		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
