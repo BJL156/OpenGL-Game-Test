@@ -7,7 +7,6 @@
 
 #include <iostream>
 
-
 class Window
 {
 private:
@@ -16,6 +15,7 @@ private:
 	GLFWwindow* m_Window;
 public:
 	Renderer renderer;
+
 	Window(int width, int height, const char* title) : m_Width(width), m_Height(height), m_Title(title)
 	{
 		glfwInit();
@@ -30,6 +30,7 @@ public:
 		if (m_Window == NULL)
 			std::cout << "FAILED TO CREATE WINDOW" << std::endl;
 		glfwMakeContextCurrent(m_Window);
+
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			std::cout << "GLAD FAILED TO INITIALIZE" << std::endl;
@@ -46,6 +47,8 @@ public:
 
 	void Update(float r, float g, float b, float a, Shader shader)
 	{
+		shader.Use();
+	
 		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 

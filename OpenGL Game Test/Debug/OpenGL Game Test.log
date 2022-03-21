@@ -1,3 +1,47 @@
-﻿  Main.cpp
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Shader.h(40,40): warning C4101: 'e': unreferenced local variable
+﻿  EntryPoint.cpp
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Shader.h(40,40): warning C4101: 'e': unreferenced local variable
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,47): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,62): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,81): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,98): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Game.cpp
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Shader.h(40,40): warning C4101: 'e': unreferenced local variable
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,47): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,62): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,81): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\Rect.h(15,98): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL Game Test.vcxproj -> C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\Debug\OpenGL Game Test.exe
