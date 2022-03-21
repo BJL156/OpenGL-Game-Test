@@ -34,5 +34,5 @@ The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window
 ```
 r1.Draw(glm::vec4(100.0f, 30.0f, 230.0f, 255.0f), window, shader);
 ```
-The output should now have the follow:
+The output should now have something similar to the follow:
 ![Rendered_Rect](https://user-images.githubusercontent.com/97370242/159363689-0d99e524-3dda-43ce-91fc-43ad8cd44c15.jpg)
