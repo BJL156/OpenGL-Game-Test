@@ -5,7 +5,7 @@ The game test supports texture renderering (COMING SOON) and also solid color re
 
 ## Front End
 Games are made in the style of Unity.
-`Game.cpp`
+Game code is written in the `Game.cpp` file location: `OpenGL Game Test\src`
 ```
 #include "Game.h"
 
