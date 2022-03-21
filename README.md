@@ -1,5 +1,5 @@
 # OpenGL Game Test
-This is my test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture renderering (COMING SOON) and also solid color renderering.
+This is my test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture renderering (COMING SOON) and also solid color rendering.
 
 ## Front End
 Games are made in the style of the Unity game engine with a `Start()` and `Update()` function.
