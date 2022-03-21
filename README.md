@@ -5,16 +5,22 @@ The game test supports texture renderering (COMING SOON) and also solid color re
 
 ## Front End
 Games are made in the style of Unity.
+`Game.cpp`
 ```
 #include "Game.h"
 
-void Game::Start()
+namespace OpenGL2DEngine
 {
-  // gets called once
-}
+	// gets called once at the start of the game loop
+	void Game::Start()
+	{
 
-void Game::Update()
-{
-  // gets called every frame
+	}
+
+	// gets called every frame
+	void Game::Update()
+	{
+
+	}
 }
 ```
