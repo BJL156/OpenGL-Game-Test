@@ -30,7 +30,7 @@ Here is an example:
 Rect r1(glm::vec2(0.0f, 0.0f), glm::vec2(100.0f, 100.0f));
 ```
 
-The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window window, Shader shader)` and this method should be called in the `Update()` function.
+The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window window, Shader shader)` and this method should be called in the `Update()` method.
 ```
 r1.Draw(glm::vec4(100.0f, 30.0f, 230.0f, 255.0f), window, shader);
 ```
