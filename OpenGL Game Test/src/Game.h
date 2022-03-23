@@ -4,6 +4,9 @@
 #include "Shader.h"
 #include "Rect.h"
 
+#include "KeyCodes.h"
+#include "MouseCodes.h"
+
 namespace OpenGL2DEngine
 {
 	class Game

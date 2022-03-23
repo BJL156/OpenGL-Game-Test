@@ -39,6 +39,13 @@ public:
 
 	}
 
+	void SetWireframe(bool value)
+	{
+		if (value)
+			glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		else glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+	}
+
 	void Draw(glm::vec2 position, glm::vec2 scale, glm::vec4 color, GLFWwindow* window, Shader shader)
 	{
 		glm::mat4 model = glm::mat4(1.0f);

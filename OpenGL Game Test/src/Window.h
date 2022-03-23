@@ -41,9 +41,6 @@ public:
 		renderer.Init();
 	}
 
-	double GetCursorX() { return cursorX; }
-	double GetCursorY() { return cursorY; }
-
 	bool WindowShouldClose() { return glfwWindowShouldClose(m_Window); }
 	void SetWindowShouldClose(bool value) { return glfwSetWindowShouldClose(m_Window, value); }
 
@@ -54,6 +51,16 @@ public:
 	void FillColor(float r, float g, float b, float a)
 	{
 		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+	}
+
+	void SetWireframe(bool value)
+	{
+		renderer.SetWireframe(value);
+	}
+
+	void SetTitle(const char* title)
+	{
+		glfwSetWindowTitle(m_Window, title);
 	}
 
 	void Update()
