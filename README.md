@@ -24,12 +24,14 @@ namespace OpenGL2DEngine
 ```
 
 ## Creating and Drawing Entities
-Using `Rect.h` create a new instance of the `Rect` class. The arguments are the position and the scale in the form of a `vec2` (there is no need to include `glm` as it is already included in the header file).
+##### Step One
+Using `Rect.h` create a new instance of the `Rect` class. The constructor look like this: `Rect(glm::vec2 position, glm::vec2 scale)` and also there is no need to include `glm` as it is already included in the header file.
 Here is an example:
 ```
 Rect r1(glm::vec2(0.0f, 0.0f), glm::vec2(100.0f, 100.0f));
 ```
 
+##### Step Two
 The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window window, Shader shader)` and this method should be called in the `Update()` method.
 ```
 r1.Draw(glm::vec4(100.0f, 30.0f, 230.0f, 255.0f), window, shader);
