@@ -4,17 +4,19 @@
 #include "Shader.h"
 #include "Rect.h"
 
-namespace OpenGL2D
+namespace OpenGL2DEngine
 {
 	class Game
 	{
 	public:
+		double cursorX, cursorY;
+
 		Window window;
 		Shader shader;
 
-		Game(Window windowW, Shader ShaderS) : window(windowW), shader(ShaderS)
+		Game(Window windowW) : window(windowW)
 		{
-
+			shader = windowW.shader;
 		}
 
 		void Start();

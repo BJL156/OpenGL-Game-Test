@@ -13,7 +13,7 @@ class Shader
 {
 public:
     unsigned int ID;
-    Shader(const char* vertexPath, const char* fragmentPath)
+    void SetUp(const char* vertexPath, const char* fragmentPath)
     {
         std::string vertexCode;
         std::string fragmentCode;
@@ -65,6 +65,11 @@ public:
         glDeleteShader(fragment);
     }
     void Use() { glUseProgram(ID); }
+
+    void Destory()
+    {
+        glDeleteProgram(ID);
+    }
 
     // vec
     void SetVec4(const char* name, const glm::vec4& vec4) { glUniform4fv(glGetUniformLocation(ID, name), 1, &vec4[0]); }

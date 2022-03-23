@@ -15,7 +15,8 @@ private:
 	GLFWwindow* m_Window;
 public:
 	Renderer renderer;
-
+	Shader shader;
+	double cursorX, cursorY;
 	Window(int width, int height, const char* title) : m_Width(width), m_Height(height), m_Title(title)
 	{
 		glfwInit();
@@ -35,8 +36,13 @@ public:
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			std::cout << "GLAD FAILED TO INITIALIZE" << std::endl;
 
+		shader.SetUp("res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
+
 		renderer.Init();
 	}
+
+	double GetCursorX() { return cursorX; }
+	double GetCursorY() { return cursorY; }
 
 	bool WindowShouldClose() { return glfwWindowShouldClose(m_Window); }
 	void SetWindowShouldClose(bool value) { return glfwSetWindowShouldClose(m_Window, value); }
@@ -45,21 +51,25 @@ public:
 	int GetHeight() { return m_Height; }
 	GLFWwindow* GetWindow() { return m_Window; }
 
-	void Update(float r, float g, float b, float a, Shader shader)
+	void FillColor(float r, float g, float b, float a)
+	{
+		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+	}
+
+	void Update()
 	{
 		shader.Use();
-	
-		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+		glfwSwapBuffers(m_Window);
+
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		renderer.Draw(glm::vec4(255.0f, 0, 255.0f, 255.0f), m_Window, shader);
-
-		glfwSwapBuffers(m_Window);
 		glfwPollEvents();
 	}
 
 	void Destory()
 	{
+		shader.Destory();
+		renderer.Destory();
 		glfwTerminate();
 	}
 };

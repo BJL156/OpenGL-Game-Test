@@ -16,12 +16,12 @@ public:
 	{
 		float vertices[] = {
 			 0.0f, 0.0f,
-			 0.0f, -1.0f,
-			 1.0f, -1.0f,
+			 0.0f, 1.0f,
+			 1.0f, 1.0f,
 
 			 0.0f, 0.0f,
 			 1.0f, 0.0f,
-			 1.0f, -1.0f
+			 1.0f, 1.0f
 		};
 		glGenVertexArrays(1, &VAO);
 		glGenBuffers(1, &VBO);
@@ -39,13 +39,13 @@ public:
 
 	}
 
-	void Draw(glm::vec4 color, GLFWwindow* window, Shader shader)
+	void Draw(glm::vec2 position, glm::vec2 scale, glm::vec4 color, GLFWwindow* window, Shader shader)
 	{
 		glm::mat4 model = glm::mat4(1.0f);
 		glm::mat4 projection = glm::mat4(1.0f);
 
-		model = glm::translate(model, glm::vec3(100.0f, 100.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(100.0f, 100.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(position, 0.0f));
+		model = glm::scale(model, glm::vec3(scale, 0.0f));
 
 		int width, height;
 		glfwGetWindowSize(window, &width, &height);
@@ -62,5 +62,11 @@ public:
 		glBindVertexArray(VAO);
 		glDrawArrays(GL_TRIANGLES, 0, 9);
 		glBindVertexArray(0);
+	}
+
+	void Destory()
+	{
+		glDeleteVertexArrays(1, &VAO);
+		glDeleteBuffers(1, &VBO);
 	}
 };

@@ -17,8 +17,15 @@ public:
 
 	}
 
-	void Draw(glm::vec4 color, Window window, Shader shader)
+	bool IsColliding(Rect otherRect)
 	{
-		window.renderer.Draw(color, window.GetWindow(), shader);
+		if (x + width > otherRect.x && x < otherRect.x + otherRect.width && y + height > otherRect.y && y < otherRect.y + otherRect.height)
+			return true;
+		return false;
+	}
+
+	void Draw(glm::vec4 color, Window window)
+	{
+		window.renderer.Draw(glm::vec2(x, y), glm::vec2(width, height), color, window.GetWindow(), window.shader);
 	}
 };
