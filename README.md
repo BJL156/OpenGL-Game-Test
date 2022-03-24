@@ -2,37 +2,38 @@
 This is my test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture rendering (COMING SOON) and also solid color rendering.
 
 ## Front End
-Games are made in the style of the Unity game engine with a `Start()` and `Update()` function.
-Game code is written in the `Game.cpp` file. The file location is `OpenGL Game Test\src`
+Games are written in the `Main.cpp` file. Similar to many game frame works such as, SFML, pygame, raylib and SDL2. The code below is a draws a red square to the window.
 ```
-#include "Game.h"
+#include "headers/OpenGLGameTest.h"
 
-namespace OpenGL2DEngine
+int main()
 {
-	// gets called once at the start of the game loop
-	void Game::Start()
+	Window window = Window(860, 600, "OpenGL Game Test");
+
+
+	Rect r1(glm::vec2(0.0f, 0.0f), glm::vec2(100.0f, 100.0f));
+
+	while (!window.WindowShouldClose())
 	{
+		window.Update();
+
+		r1.Draw(glm::vec4(0.0f, 0.0f, 255.0f, 255.0f), window);
 
 	}
-
-	// gets called every frame
-	void Game::Update()
-	{
-
-	}
+	window.Destory();
 }
 ```
 
 ## Creating and Drawing Entities
 ##### Step One
-Using `Rect.h` create a new instance of the `Rect` class. The constructor look like this: `Rect(glm::vec2 position, glm::vec2 scale)` and also there is no need to include `glm` as it is already included in the header file.
+Step one is to create a new instance of the `Rect` class. The constructor look like this: `Rect(glm::vec2 position, glm::vec2 scale)` and also there is no need to include `glm` as it is already included in the header file.
 Here is an example:
 ```
 Rect r1(glm::vec2(0.0f, 0.0f), glm::vec2(100.0f, 100.0f));
 ```
 
 ##### Step Two
-The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window window, Shader shader)` and this method should be called in the `Update()` method.
+The next step is to draw the Rect using the method `Draw(glm::vec4 color, Window window, Shader shader)` and this method should be called in the game loop.
 ```
 r1.Draw(glm::vec4(100.0f, 30.0f, 230.0f, 255.0f), window, shader);
 ```
