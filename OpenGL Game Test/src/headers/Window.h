@@ -48,9 +48,9 @@ public:
 	int GetHeight() { return m_Height; }
 	GLFWwindow* GetWindow() { return m_Window; }
 
-	void FillColor(float r, float g, float b, float a)
+	void FillColor(glm::vec4 color)
 	{
-		glClearColor(r / 255.0f, g / 255.0f, b / 255.0f, a / 255.0f);
+		glClearColor(color.x / 255.0f, color.y / 255.0f, color.z / 255.0f, color.w / 255.0f);
 	}
 
 	void SetWireframe(bool value)
