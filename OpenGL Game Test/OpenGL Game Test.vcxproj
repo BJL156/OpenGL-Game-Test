@@ -152,18 +152,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
-    <ClCompile Include="src\EntryPoint.cpp" />
-    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\Input.h" />
-    <ClInclude Include="src\KeyCodes.h" />
-    <ClInclude Include="src\MouseCodes.h" />
-    <ClInclude Include="src\Rect.h" />
-    <ClInclude Include="src\Renderer.h" />
-    <ClInclude Include="src\Shader.h" />
-    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\headers\Input.h" />
+    <ClInclude Include="src\headers\KeyCodes.h" />
+    <ClInclude Include="src\headers\MouseCodes.h" />
+    <ClInclude Include="src\headers\OpenGLGameTest.h" />
+    <ClInclude Include="src\headers\Rect.h" />
+    <ClInclude Include="src\headers\Renderer.h" />
+    <ClInclude Include="src\headers\Shader.h" />
+    <ClInclude Include="src\headers\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\fragment.glsl" />
