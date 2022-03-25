@@ -61,5 +61,6 @@ The final step is to draw the Rect using the method `Draw(glm::vec4 color, int t
 r1.Draw(glm::vec4(255.0f, 255.0f, 255.0f, 255.0f), window.textureRenderer.GetTexture("dirt"), window);
 ```
 The output should now have something similar to the follow:
-![Rendered_Texture](https://user-images.githubusercontent.com/97370242/160214380-abf837e0-5901-453f-b39c-b12d58186d20.jpg)
+![Rendered_Texture](https://user-images.githubusercontent.com/97370242/160214418-a6d08496-8ec8-4102-aba2-a980bdbe888b.jpg)
+
 
