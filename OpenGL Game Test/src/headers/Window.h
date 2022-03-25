@@ -3,6 +3,7 @@
 #include <GLAD/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "TextureRenderer.h"
 #include "Renderer.h"
 
 #include <iostream>
@@ -13,9 +14,18 @@ private:
 	int m_Width, m_Height;
 	const char* m_Title;
 	GLFWwindow* m_Window;
+
+	float prevTime = glfwGetTime();
+	int frames = 0;
+	int frameRate;
 public:
 	Renderer renderer;
+	TextureRenderer textureRenderer;
+
 	Shader shader;
+	Shader textureShader;
+
+
 	double cursorX, cursorY;
 	Window(int width, int height, const char* title) : m_Width(width), m_Height(height), m_Title(title)
 	{
@@ -37,35 +47,45 @@ public:
 			std::cout << "GLAD FAILED TO INITIALIZE" << std::endl;
 
 		shader.SetUp("res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
+		textureShader.SetUp("res/shaders/vertexTexture.glsl", "res/shaders/fragmentTexture.glsl");
 
 		renderer.Init();
+		textureRenderer.Init();
 	}
+
 
 	bool WindowShouldClose() { return glfwWindowShouldClose(m_Window); }
 	void SetWindowShouldClose(bool value) { return glfwSetWindowShouldClose(m_Window, value); }
 
+	// get functions
+	GLFWwindow* GetWindow() { return m_Window; }
 	int GetWidth() { return m_Width; }
 	int GetHeight() { return m_Height; }
-	GLFWwindow* GetWindow() { return m_Window; }
 
-	void FillColor(glm::vec4 color)
-	{
-		glClearColor(color.x / 255.0f, color.y / 255.0f, color.z / 255.0f, color.w / 255.0f);
-	}
+	int GetFrameRate() { return frameRate; }
+	float GetTime() { return glfwGetTime(); }
 
-	void SetWireframe(bool value)
-	{
-		renderer.SetWireframe(value);
-	}
-
-	void SetTitle(const char* title)
-	{
-		glfwSetWindowTitle(m_Window, title);
-	}
+	// set functions
+	void FillColor(glm::vec4 color) { glClearColor(color.x / 255.0f, color.y / 255.0f, color.z / 255.0f, color.w / 255.0f); }
+	void SetWireframe(bool value) { renderer.SetWireframe(value); }
+	void SetTitle(const char* title) { glfwSetWindowTitle(m_Window, title); }
 
 	void Update()
 	{
-		shader.Use();
+
+		// calculate frame rate
+		if (glfwGetTime() - prevTime >= 0.25f)
+		{
+			frames *= 4;
+			
+			frameRate = frames;
+
+
+			frames = 0;
+			prevTime = glfwGetTime();
+		}
+		frames++;
+
 		glfwSwapBuffers(m_Window);
 
 		glClear(GL_COLOR_BUFFER_BIT);

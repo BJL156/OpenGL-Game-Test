@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="glad.c" />
+    <ClCompile Include="src\headers\stb_image.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -162,11 +163,17 @@
     <ClInclude Include="src\headers\Rect.h" />
     <ClInclude Include="src\headers\Renderer.h" />
     <ClInclude Include="src\headers\Shader.h" />
+    <ClInclude Include="src\headers\stb_image.h" />
+    <ClInclude Include="src\headers\Texture.h" />
+    <ClInclude Include="src\headers\TextureRenderer.h" />
+    <ClInclude Include="src\headers\TRect.h" />
     <ClInclude Include="src\headers\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\fragment.glsl" />
+    <None Include="res\shaders\fragmentTexture.glsl" />
     <None Include="res\shaders\vertex.glsl" />
+    <None Include="res\shaders\vertexTexture.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

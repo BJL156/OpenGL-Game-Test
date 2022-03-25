@@ -48,6 +48,8 @@ public:
 
 	void Draw(glm::vec2 position, glm::vec2 scale, glm::vec4 color, GLFWwindow* window, Shader shader)
 	{
+		shader.Use();
+
 		glm::mat4 model = glm::mat4(1.0f);
 		glm::mat4 projection = glm::mat4(1.0f);
 

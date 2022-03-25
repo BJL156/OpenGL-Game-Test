@@ -6,6 +6,9 @@
 
 #include "Shader.h"
 #include "Rect.h"
+#include "TRect.h"
+
+#include "Texture.h"
 
 
 // input
