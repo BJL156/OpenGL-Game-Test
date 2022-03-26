@@ -16,7 +16,7 @@ public:
     int position;
     const char* name;
     //int position = 2;
-	void SetMeUpUwU(const char* filePath, const char* Name, int Position)
+	void SetUp(const char* filePath, const char* Name, int Position)
 	{
         name = Name;
         position = Position;

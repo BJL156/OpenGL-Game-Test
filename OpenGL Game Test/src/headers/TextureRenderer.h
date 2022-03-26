@@ -53,7 +53,7 @@ public:
     {
         index++;
         texturesV.push_back(Texture());
-        texturesV[texturesV.size() - 1].SetMeUpUwU(filePath, textureName, texturesV.size() - 1);
+        texturesV[texturesV.size() - 1].SetUp(filePath, textureName, texturesV.size() - 1);
         std::cout << "size: " << texturesV.size() << std::endl;
         std::cout << "index: " << index << std::endl;
         std::cout << "-------------------" << std::endl;
