@@ -1,5 +1,5 @@
 # OpenGL Game Test
-This is my test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture rendering and also solid color rendering.
+This is my test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture rendering, also solid color rendering and text rendering.
 
 ## Front End
 Games are written in the `Main.cpp` file. Similar to many game frame works. The code below creats a window and draws a red square.
