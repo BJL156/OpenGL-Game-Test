@@ -1,29 +1,30 @@
-#include "headers/OpenGLGameTest.h"
+﻿#include "headers/OpenGLGameTest.h"
+
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
+#include <sstream>
+
+// remove console
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 
 int main()
 {
-	Window window(860, 600, "OpenGL Pong");
+	Window window(860, 600, "OpenGL C++ Game");
 	window.FillColor(glm::vec4(50.0f, 75.0f, 100.0f, 255.0f));
 
-	// TRect are textured geometry
-	TRect r1(glm::vec2(0.0f, 0.0f), glm::vec2(100.0f, 100.0f));
-	TRect r3(glm::vec2(100.0f, 100.0f), glm::vec2(100.0f, 100.0f));
+	Text text(glm::vec2(0.0f, 0.0f));
 
-	// load textures
-	window.textureRenderer.LoadTexture("res/textures/dirt.jpg", "dirt");
-
-	// Rect are solid color geometry
-	Rect r2(glm::vec2(50.0f, 50.0f), glm::vec2(100.0f, 100.0f));
-
+	// game loop
 	while (!window.WindowShouldClose())
 	{
 		window.Update();
-		std::cout << window.GetFrameRate() << std::endl;
 
+		std::stringstream texta;
+		texta << "fps: " << window.GetFrameRate();
 
-		// draw textured entities
-		r1.Draw(glm::vec4(255.0f, 255.0f, 255.0f, 255.0f), window.textureRenderer.GetTexture("dirt"), window);
-		r2.Draw(glm::vec4(255.0f, 0.0f, 0.0f, 128.0f), window);
+		// render text
+		text.Draw(glm::vec4(255.0f, 255.0f, 255.0f, 255.0f), 0.5f, texta.str(), window);
 	}
 	window.Destory();
 }

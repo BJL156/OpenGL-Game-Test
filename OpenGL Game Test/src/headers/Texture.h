@@ -15,6 +15,9 @@ public:
     unsigned int texture;
     int position;
     const char* name;
+
+    int width, height;
+
     //int position = 2;
 	void SetUp(const char* filePath, const char* Name, int Position)
 	{
@@ -27,11 +30,19 @@ public:
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_BORDER);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_BORDER);
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
-        int width, height, nrChannels;
-        unsigned char* data = stbi_load(filePath, &width, &height, &nrChannels, 0);
+        // linear
+        /*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);*/
+
+        // nearest
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+
+        int Width, Height, nrChannels;
+        unsigned char* data = stbi_load(filePath, &Width, &Height, &nrChannels, 0);
+        width = Width;
+        height = Height;
 
         // find if image has an alpha channel
         std::string filePathS = filePath;

@@ -5,8 +5,11 @@
 
 #include "TextureRenderer.h"
 #include "Renderer.h"
+#include "TextRenderer.h"
 
 #include <iostream>
+
+#include <windows.h>
 
 class Window
 {
@@ -21,6 +24,7 @@ private:
 public:
 	Renderer renderer;
 	TextureRenderer textureRenderer;
+	TextRenderer textRenderer;
 
 	Shader shader;
 	Shader textureShader;
@@ -36,23 +40,25 @@ public:
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 		glfwWindowHint(GLFW_RESIZABLE, false);
+		glfwWindowHint(GLFW_SAMPLES, 4);
 
 		m_Window = glfwCreateWindow(m_Width, m_Height, m_Title, NULL, NULL);
 		if (m_Window == NULL)
 			std::cout << "FAILED TO CREATE WINDOW" << std::endl;
 		glfwMakeContextCurrent(m_Window);
 
-
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			std::cout << "GLAD FAILED TO INITIALIZE" << std::endl;
-
+		
 		shader.SetUp("res/shaders/vertex.glsl", "res/shaders/fragment.glsl");
 		textureShader.SetUp("res/shaders/vertexTexture.glsl", "res/shaders/fragmentTexture.glsl");
 
 		renderer.Init();
 		textureRenderer.Init();
-	}
+		textRenderer.SetUp(GetWidth(), GetHeight());
 
+		glEnable(GL_MULTISAMPLE);
+	}
 
 	bool WindowShouldClose() { return glfwWindowShouldClose(m_Window); }
 	void SetWindowShouldClose(bool value) { return glfwSetWindowShouldClose(m_Window, value); }
@@ -70,16 +76,25 @@ public:
 	void SetWireframe(bool value) { renderer.SetWireframe(value); }
 	void SetTitle(const char* title) { glfwSetWindowTitle(m_Window, title); }
 
+
+	// texture
+	void LoadTexture(const char* filePath, const char* textureName) { textureRenderer.LoadTexture(filePath, textureName); }
+	int GetTextureUnit(const char* textureName) { return textureRenderer.GetTextureUnit(textureName); }
+
+	int GetTextureWidth(const char* textureName) { return textureRenderer.GetTextureWidth(textureName); }
+	int GetTextureHeight(const char* textureName) { return textureRenderer.GetTextureHeight(textureName); }
+
+
+	void CloseConsole() { FreeConsole(); }
+
 	void Update()
 	{
-
 		// calculate frame rate
 		if (glfwGetTime() - prevTime >= 0.25f)
 		{
 			frames *= 4;
 			
 			frameRate = frames;
-
 
 			frames = 0;
 			prevTime = glfwGetTime();

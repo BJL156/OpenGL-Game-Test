@@ -62,11 +62,22 @@
     <ClInclude Include="src\headers\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\headers\TextRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\headers\Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\vertex.glsl" />
     <None Include="res\shaders\fragment.glsl" />
     <None Include="res\shaders\fragmentTexture.glsl" />
     <None Include="res\shaders\vertexTexture.glsl" />
+    <None Include="res\shaders\vertexText.glsl" />
+    <None Include="res\shaders\fragmentText.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Main.txt" />
   </ItemGroup>
 </Project>

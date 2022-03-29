@@ -59,12 +59,30 @@ public:
         std::cout << "-------------------" << std::endl;
     }
 
-    int GetTexture(const char* textureName)
+    int GetTextureUnit(const char* textureName)
     {
         for (int i = 0; i < texturesV.size(); i++)
         {
             if (texturesV[i].name == textureName)
                 return i;
+        }
+    }
+
+    int GetTextureWidth(const char* textureName)
+    {
+        for (int i = 0; i < texturesV.size(); i++)
+        {
+            if (texturesV[i].name == textureName)
+                return texturesV[i].width;
+        }
+    }
+
+    int GetTextureHeight(const char* textureName)
+    {
+        for (int i = 0; i < texturesV.size(); i++)
+        {
+            if (texturesV[i].name == textureName)
+                return texturesV[i].height;
         }
     }
 
