@@ -39,16 +39,13 @@ public:
 
         FT_Library ft;
         if (FT_Init_FreeType(&ft))
-        {
             std::cout << "FREETYPE FAILED TO INITIALIZE" << std::endl;
-        }
 
         std::string font_name = "res/fonts/Roboto/Roboto-Light.ttf";
 
         FT_Face face;
-        if (FT_New_Face(ft, font_name.c_str(), 0, &face)) {
+        if (FT_New_Face(ft, font_name.c_str(), 0, &face))
             std::cout << "FAILED TO LOAD FONT" << std::endl;
-        }
         else {
             FT_Set_Pixel_Sizes(face, 0, 48);
 
@@ -105,7 +102,7 @@ public:
         glBindVertexArray(0);
 	}
 
-    void RenderText(std::string text, glm::vec2 position, float scale, glm::vec4 color)
+    void Draw(std::string text, glm::vec2 position, float scale, glm::vec4 color)
     {
         shader.Use();
         shader.SetVec4("textColor", color);

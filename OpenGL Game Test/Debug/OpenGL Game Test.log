@@ -60,8 +60,5 @@ C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Tes
           [
               T=float
           ]
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\TextureRenderer.h(78): warning C4715: 'TextureRenderer::GetTextureWidth': not all control paths return a value
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\TextureRenderer.h(87): warning C4715: 'TextureRenderer::GetTextureHeight': not all control paths return a value
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\TextureRenderer.h(69): warning C4715: 'TextureRenderer::GetTextureUnit': not all control paths return a value
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL Game Test.vcxproj -> C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\Debug\OpenGL Game Test.exe

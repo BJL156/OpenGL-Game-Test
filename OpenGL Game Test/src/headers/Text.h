@@ -20,6 +20,6 @@ public:
 
 	void Draw(glm::vec4 color, float scale, std::string text, Window window)
 	{
-		window.textRenderer.RenderText(text, glm::vec2(x, y), scale, color);
+		window.textRenderer.Draw(text, glm::vec2(x, y), scale, color);
 	}
 };
