@@ -89,6 +89,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\FreeType\include;C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\GLAD\include;C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\GLFW\include;C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\GLM\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -178,9 +179,6 @@
     <None Include="res\shaders\vertexText.glsl" />
     <None Include="res\shaders\vertex.glsl" />
     <None Include="res\shaders\vertexTexture.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="src\Main.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

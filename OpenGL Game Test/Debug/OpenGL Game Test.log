@@ -6,10 +6,8 @@ C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Tes
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
 C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\GLAD\include\GLAD\glad.h(32): message : see previous definition of 'APIENTRY'
 C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(21,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(58,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(58,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(72,38): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(100,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(70,38): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Window.h(98,26): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Rect.h(15,47): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
@@ -50,15 +48,17 @@ C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Tes
           [
               T=float
           ]
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(16,30): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(20,67): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(16,45): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(20,82): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(22,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\src\headers\Text.h(22,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   OpenGL Game Test.vcxproj -> C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\Debug\OpenGL Game Test.exe

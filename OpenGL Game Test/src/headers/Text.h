@@ -9,17 +9,21 @@
 #include <string>
 #include <iostream>
 
+#include <string>
+
 class Text
 {
+private:
+	TextRenderer textRender;
 public:
 	int x, y;
-	Text(glm::vec2 position) : x(position.x), y(position.y)
+	Text(glm::vec2 position, std::string fontPath, Window window) : x(position.x), y(position.y)
 	{
-
+		textRender.SetUp(window.GetWidth(), window.GetHeight(), fontPath);
 	}
 
 	void Draw(glm::vec4 color, float scale, std::string text, Window window)
 	{
-		window.textRenderer.Draw(text, glm::vec2(x, y), scale, color);
+		textRender.Draw(text, glm::vec2(x, y), scale, color);
 	}
 };

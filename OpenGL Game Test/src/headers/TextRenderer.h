@@ -24,7 +24,7 @@ public:
     glm::mat4 model = glm::mat4(1.0);
 
     float windowWidth, windowHeight;
-	void SetUp(float WindowWidth, float WindowHeight)
+	void SetUp(float WindowWidth, float WindowHeight, std::string &fontPath)
 	{
         windowWidth = WindowWidth;
         windowHeight = WindowHeight;
@@ -41,7 +41,7 @@ public:
         if (FT_Init_FreeType(&ft))
             std::cout << "FREETYPE FAILED TO INITIALIZE" << std::endl;
 
-        std::string font_name = "res/fonts/Roboto/Roboto-Light.ttf";
+        std::string font_name = fontPath;
 
         FT_Face face;
         if (FT_New_Face(ft, font_name.c_str(), 0, &face))

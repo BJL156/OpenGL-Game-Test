@@ -24,7 +24,6 @@ private:
 public:
 	Renderer renderer;
 	TextureRenderer textureRenderer;
-	TextRenderer textRenderer;
 
 	Shader shader;
 	Shader textureShader;
@@ -55,7 +54,6 @@ public:
 
 		renderer.Init();
 		textureRenderer.Init();
-		textRenderer.SetUp(GetWidth(), GetHeight());
 
 		glEnable(GL_MULTISAMPLE);
 	}

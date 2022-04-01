@@ -1,0 +1,1 @@
+C:\Users\bjl15\C C++\Libraries\OpenGL\Organized\OpenGL Game Test\OpenGL Game Test\dependencies\FreeType\freetype-2.11.1\objs\Win32\Debug\freetype.dll
