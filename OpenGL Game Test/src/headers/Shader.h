@@ -66,7 +66,7 @@ public:
     }
     void Use() { glUseProgram(ID); }
 
-    void Destory()
+    void Destroy()
     {
         glDeleteProgram(ID);
     }

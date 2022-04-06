@@ -106,10 +106,10 @@ public:
 		glfwPollEvents();
 	}
 
-	void Destory()
+	void Destroy()
 	{
-		shader.Destory();
-		renderer.Destory();
+		shader.Destroy();
+		renderer.Destroy();
 		glfwTerminate();
 	}
 };

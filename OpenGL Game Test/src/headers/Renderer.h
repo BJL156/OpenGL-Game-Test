@@ -73,7 +73,7 @@ public:
 		glBindVertexArray(0);
 	}
 
-	void Destory()
+	void Destroy()
 	{
 		glDeleteVertexArrays(1, &VAO);
 		glDeleteBuffers(1, &VBO);
