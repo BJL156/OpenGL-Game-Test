@@ -11,6 +11,11 @@
 
 #include <windows.h>
 
+#include <irrKlang.h>
+
+
+using namespace irrklang;
+
 class Window
 {
 private:
@@ -21,6 +26,8 @@ private:
 	float prevTime = glfwGetTime();
 	int frames = 0;
 	int frameRate;
+	
+	ISoundEngine* soundEngine = createIrrKlangDevice();
 public:
 	Renderer renderer;
 	TextureRenderer textureRenderer;
@@ -82,6 +89,10 @@ public:
 	int GetTextureWidth(const char* textureName) { return textureRenderer.GetTextureWidth(textureName); }
 	int GetTextureHeight(const char* textureName) { return textureRenderer.GetTextureHeight(textureName); }
 
+	void PlayAudio(const char* filePath, bool repeat)
+	{
+		soundEngine->play2D(filePath, repeat);
+	}
 
 	void CloseConsole() { FreeConsole(); }
 

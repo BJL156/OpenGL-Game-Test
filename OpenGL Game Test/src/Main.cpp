@@ -13,6 +13,8 @@ int main()
 	Text textw(glm::vec2(10.0f, 10.0f), "res/fonts/Roboto/Roboto-Light.ttf", window);
 	Text text(glm::vec2(10.0f, 300.0f), "res/fonts/Orbitron/Orbitron-VariableFont_wght.ttf", window);
 
+	window.PlayAudio("res/audio/OandS.mp3", true);
+	
 	// game loop
 	while (!window.WindowShouldClose())
 	{
@@ -20,6 +22,7 @@ int main()
 
 		std::stringstream texta;
 		texta << "fps: " << window.GetFrameRate();
+
 
 		// render text
 		textw.Draw(glm::vec4(255.0f, 255.0f, 255.0f, 255.0f), 0.5f, texta.str(), window);
