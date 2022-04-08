@@ -7,6 +7,8 @@
 #include "Renderer.h"
 #include "TextRenderer.h"
 
+#include "Sound.h"
+
 #include <iostream>
 
 #include <windows.h>
@@ -26,14 +28,14 @@ private:
 	float prevTime = glfwGetTime();
 	int frames = 0;
 	int frameRate;
-	
-	ISoundEngine* soundEngine = createIrrKlangDevice();
 public:
 	Renderer renderer;
 	TextureRenderer textureRenderer;
 
 	Shader shader;
 	Shader textureShader;
+
+	SoundEngine soundEngine;
 
 
 	double cursorX, cursorY;
@@ -88,13 +90,6 @@ public:
 
 	int GetTextureWidth(const char* textureName) { return textureRenderer.GetTextureWidth(textureName); }
 	int GetTextureHeight(const char* textureName) { return textureRenderer.GetTextureHeight(textureName); }
-
-	void PlayAudio(const char* filePath, bool repeat)
-	{
-		soundEngine->play2D(filePath, repeat);
-	}
-
-	void CloseConsole() { FreeConsole(); }
 
 	void Update()
 	{

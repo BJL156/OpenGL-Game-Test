@@ -164,6 +164,7 @@
     <ClInclude Include="src\headers\Rect.h" />
     <ClInclude Include="src\headers\Renderer.h" />
     <ClInclude Include="src\headers\Shader.h" />
+    <ClInclude Include="src\headers\Sound.h" />
     <ClInclude Include="src\headers\stb_image.h" />
     <ClInclude Include="src\headers\Text.h" />
     <ClInclude Include="src\headers\TextRenderer.h" />
