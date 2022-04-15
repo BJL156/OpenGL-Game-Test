@@ -1,6 +1,10 @@
 # OpenGL Game Test
 This is my **first** ever test on making a "game engine" and it was created with C++ and modern OpenGL. The game test supports texture rendering, solid color rendering and text rendering. Sound can also be played from this test. **It is also quite important to note that I am learning from https://learnopengl.com so code may look similar because I learn, following and use their tutorials so I can make this engine.**
 
+---
+**The first game test has come to an end. There will be no more updates/commitments to this repository. Any other game tests will be made in a different repository.**
+---
+
 ## Features
 - Soild Color Rendering
 - Textured Rendering
